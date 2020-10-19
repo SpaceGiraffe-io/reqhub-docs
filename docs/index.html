@@ -7,15 +7,27 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: 'ReqHub',
+      repo: 'https://github.com/SpaceGiraffe-io',
+      logo: 'https://reqhub.io/images/logo.png',
+      themeColor: '#2e36a8',
+      loadSidebar: true,
+      coverpage: false,
+      auto2top: true,
+      maxLevel: 4,
+      subMaxLevel: 2,
+      search: {
+        paths: 'auto'
+      }
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>

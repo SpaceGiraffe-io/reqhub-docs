@@ -1,0 +1,9 @@
+
+.app-name-link {
+  display: inline-block;
+}
+
+.app-name-link img {
+  max-width: 64px;
+}
+
