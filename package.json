@@ -1,0 +1,21 @@
+{
+  "name": "reqhub-docs",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/SpaceGiraffe-io/reqhub-docs/edit/main/README.md) to maintain and preview the content for your website in Markdown files.",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "docsify serve ./docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpaceGiraffe-io/reqhub-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpaceGiraffe-io/reqhub-docs/issues"
+  },
+  "homepage": "https://github.com/SpaceGiraffe-io/reqhub-docs#readme"
+}
