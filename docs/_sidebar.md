@@ -1,7 +1,8 @@
 - Getting started
 
   - [Overview](getting-started/overview.md)
-  - [Quickstart](getting-started/quickstart.md)
+  - [Quickstart: Distributing](getting-started/quickstart-distributing.md)
+  - [Quickstart: Consuming](getting-started/quickstart-consuming.md)
 
 - Tutorials
 

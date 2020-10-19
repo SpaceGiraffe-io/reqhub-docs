@@ -1,2 +1,2 @@
-## tools/postman.md
+tell how to set up Postman with the script
 
