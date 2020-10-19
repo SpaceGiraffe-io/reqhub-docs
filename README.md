@@ -2,7 +2,8 @@
 
 Documentation for the ReqHub platform.
 
-### Running
+
+### Getting started
 
 Created with [docsify](https://docsify.js.org/).
 
@@ -11,7 +12,7 @@ Make sure you have the docsify CLI:
 npm install -g docsify-cli
 ```
 
-then run it!
+Then run it!
 ```bash
 npm run start
 ```
@@ -19,4 +20,4 @@ or
 ```bash
 yarn start
 ```
-
+and navigate to http://localhost:3000.
