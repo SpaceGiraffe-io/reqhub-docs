@@ -2,7 +2,6 @@
 
 Documentation for the ReqHub platform.
 
-
 ### Getting started
 
 Created with [docsify](https://docsify.js.org/).
@@ -21,3 +20,4 @@ or
 yarn start
 ```
 and navigate to http://localhost:3000.
+
