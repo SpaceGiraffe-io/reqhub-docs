@@ -13,6 +13,8 @@
   - [Ruby](tutorials/ruby.md)
   - [PHP](tutorials/php.md)
 
+- Recipes
+
 - Tools
 
   - [Postman](tools/postman.md)
