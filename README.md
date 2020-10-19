@@ -4,7 +4,7 @@ Documentation for the ReqHub platform.
 
 ### Getting started
 
-Created with [docsify](https://docsify.js.org/).
+This project was ceated with [docsify](https://docsify.js.org/).
 
 Make sure you have the docsify CLI:
 ```bash
