@@ -16,6 +16,7 @@
 - Recipes
 
   - Add ReqHub to an existing API
+  - Add ReqHub per-endpoint
   - Set up monthly pricing
   - Set up usage pricing
   - Set up a trial period
@@ -28,6 +29,7 @@
 - Guides
 
   - Marketing your API
+  - Troubleshooting
 
 - Tools
 
