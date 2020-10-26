@@ -15,6 +15,20 @@
 
 - Recipes
 
+  - Add ReqHub to an existing API
+  - Set up monthly pricing
+  - Set up usage pricing
+  - Set up a trial period
+  - Restrict functionality by plan
+  - Create a client library
+  - Publish to the Marketplace
+  - Multiple environments
+  - Test your API
+
+- Guides
+
+  - Marketing your API
+
 - Tools
 
   - [Postman](tools/postman.md)
