@@ -29,6 +29,8 @@
 - Guides
 
   - Marketing your API
+  - Securing your APIs
+  - Writing your own middleware
   - Troubleshooting
 
 - Tools
