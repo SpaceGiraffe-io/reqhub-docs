@@ -1,8 +1,7 @@
 - Getting started
 
-  - [Overview](getting-started/overview.md)
-  - [Quickstart: Distributing](getting-started/quickstart-distributing.md)
-  - [Quickstart: Consuming](getting-started/quickstart-consuming.md)
+  - [Quick start](getting-started/quickstart.md)
+  - [How it works](getting-started/overview.md)
 
 - Tutorials
 
@@ -11,10 +10,13 @@
   - [NodeJs](tutorials/nodejs.md)
   - [Python](tutorials/python.md)
   - [Ruby](tutorials/ruby.md)
+  - [Java](tutorials/java.md)
   - [PHP](tutorials/php.md)
+  - [Go](tutorials/go.md)
 
 - Recipes
 
+  - [Using Postman](recipes/postman.md)
   - Add ReqHub to an existing API
   - Add ReqHub per-endpoint
   - Set up monthly pricing
@@ -24,16 +26,11 @@
   - Create a client library
   - Publish to the Marketplace
   - Multiple environments
-  - Test your API
 
 - Guides
 
-  - Marketing your API
-  - Securing your APIs
   - Writing your own middleware
+  - Marketing your API
+  - Documentation and communication
   - Troubleshooting
-
-- Tools
-
-  - [Postman](tools/postman.md)
 
