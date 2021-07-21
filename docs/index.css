@@ -1,9 +1,18 @@
 
+body {
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+img {
+  box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .2);
+}
+
 .app-name-link {
   display: inline-block;
 }
 
 .app-name-link img {
-  max-width: 64px;
+  max-width: 4rem;
 }
 

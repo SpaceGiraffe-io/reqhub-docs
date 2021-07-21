@@ -29,7 +29,7 @@
 
 - Guides
 
-  - Writing your own middleware
+  - [Writing your own middleware](guides/middleware.md)
   - Marketing your API
   - Documentation and communication
   - Troubleshooting

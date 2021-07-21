@@ -1,18 +1,47 @@
 
-Get registered and log in
+## Prerequisites
+
+The following steps require a ReqHub account. Make sure you're logged in by [signing in](https://reqhub.io/login) or [signing up](https://reqhub.io/create-account).
 
 ## Distributing an API
 
-Add an API through the website
+Use the following steps to connect your API to ReqHub.
 
-(Optional) make it public
+#### 1. Add your API through the website
 
-(Optional) add a pricing plan
+Use the `New API` button at the top of the page to create a new API.
 
-Two sets of keys -- grab your publisher keys
+![New API button](https://reqhubprod.blob.core.windows.net/public/docs/new-api.png)
 
-Follow the instructions for your language
-(GitHub links)
+Fill out the form and click `Save`. All you really need is a name, but feel free to explore the other options.
+
+![Creating an API](https://reqhubprod.blob.core.windows.net/public/docs/create-api.png)
+
+#### 2. Grab your publisher keys
+
+With the API created, you will have two sets of keys.
+One set is for publishing your API, and the other is for consuming it.
+Copy the `Publisher keys` and proceed to the next step.
+
+![Publisher keys](https://reqhubprod.blob.core.windows.net/public/docs/publisher-keys.png)
+
+#### 3. Follow the instructions for your language
+
+Now you need to set up your API with ReqHub. Download the middleware package for your language and follow the README instructions to set it up.
+
+* [.Net](https://github.com/SpaceGiraffe-io/ReqHubDotNet)
+* [NodeJs](https://github.com/SpaceGiraffe-io/ReqHubNode)
+* [Python](https://github.com/SpaceGiraffe-io/ReqHubPython)
+* [Ruby](https://github.com/SpaceGiraffe-io/ReqHubRuby)
+* [Java](https://github.com/SpaceGiraffe-io/ReqHubJava)
+* [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP)
+* [Go](https://github.com/SpaceGiraffe-io/ReqHubGo)
+
+Don't see your language? See our guide on [writing your own middleware](/guides/middleware)
+
+#### 4. (Optional) Make it public
+
+#### 5. (Optional) Register with Stripe and add pricing
 
 That's it!
 

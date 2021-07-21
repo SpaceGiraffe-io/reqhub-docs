@@ -21,3 +21,7 @@ yarn start
 ```
 and navigate to http://localhost:3000.
 
+### Syntax
+
+Docsify uses Marked https://marked.js.org/demo/
+
