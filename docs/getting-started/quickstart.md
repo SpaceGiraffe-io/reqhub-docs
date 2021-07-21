@@ -37,7 +37,7 @@ Now you need to set up your API with ReqHub. Download the middleware package for
 * [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP)
 * [Go](https://github.com/SpaceGiraffe-io/ReqHubGo)
 
-Don't see your language? See our guide on [writing your own middleware](/guides/middleware)
+Don't see your language? Check out our guide on [writing your own middleware](/guides/middleware).
 
 #### 4. (Optional) Make it public
 
