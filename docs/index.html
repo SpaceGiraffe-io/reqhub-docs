@@ -41,7 +41,7 @@
 
     function titlePlugin(config) {
       return (hook, vm) => {
-        hook.doneEach((content) => {
+        hook.doneEach(() => {
           document.title += config.suffix
         });
       }
