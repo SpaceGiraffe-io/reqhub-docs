@@ -30,6 +30,10 @@ Once you've created some plans, they'll look something like this to other users.
 
 ![Pricing plans](https://reqhubprod.blob.core.windows.net/public/docs/pricing-plans.png)
 
+#### That's it!
+
+Now you can sell your APIs with ReqHub &#x1f389;
+
 ## Next steps
 Marketing
 Making user-friendly docs
