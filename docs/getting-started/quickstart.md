@@ -41,7 +41,7 @@ Don't see your language? Check out our guide on [writing your own middleware](/g
 
 #### 4. (Optional) Set up Stripe and add pricing
 
-Looking to make money selling your APIs? Check out our guide on [setting up Stripe](/guides/set-up-stripe).
+Looking to make money selling your APIs? Check out our guide on [setting up Stripe](/guides/setting-up-stripe).
 
 #### That's it!
 
