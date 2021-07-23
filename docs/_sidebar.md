@@ -29,8 +29,10 @@
 
 - Guides
 
+  - [Setting up Stripe](guides/setting-up-stripe.md)
   - [Writing your own middleware](guides/middleware.md)
   - Marketing your API
-  - Documentation and communication
+  - How pricing works
+  - Making user-friendly docs
   - Troubleshooting
 

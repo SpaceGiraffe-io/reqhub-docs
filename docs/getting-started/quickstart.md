@@ -39,13 +39,13 @@ Now you need to set up your API with ReqHub. Download the middleware package for
 
 Don't see your language? Check out our guide on [writing your own middleware](/guides/middleware).
 
-#### 4. (Optional) Make it public
+#### 4. (Optional) Set up Stripe and add pricing
 
-#### 5. (Optional) Register with Stripe and add pricing
+Looking to make money selling your APIs? Check out our guide on [setting up Stripe](/guides/set-up-stripe).
 
-That's it!
+#### That's it!
 
-
+Congratulations, you have created an API with ReqHub &#x1f389;
 
 ## Consuming an API
 
@@ -65,6 +65,7 @@ That's it!
 ## Next steps
 Check out our tutorials
 Set up Postman
+Set up Stripe
 Marketing
-Make nice documentation
+Making user-friendly docs
 
