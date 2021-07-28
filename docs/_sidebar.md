@@ -22,6 +22,7 @@
   - Set up monthly pricing
   - Set up usage pricing
   - Set up a trial period
+  - [Test a pricing plan](recipes/simulating-pricing-plans.md)
   - Restrict functionality by plan
   - Create a client library
   - Publish to the Marketplace
