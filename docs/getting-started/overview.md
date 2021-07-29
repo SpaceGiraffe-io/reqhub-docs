@@ -1,5 +1,5 @@
 
-# Overview
+# How it works
 
 Learn what ReqHub does, what it doesn't do, and how it works.
 
