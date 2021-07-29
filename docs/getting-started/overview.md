@@ -21,7 +21,7 @@ You can host your APIs anywhere, and you only need to
 configure some middleware in your API to make it work with ReqHub. So when you create an API through the website,
 you're mostly creating a new set of API keys, and it has nothing to do with the hosting or the API itself.
 
-## How does it work?
+## Request flow
 
 ReqHub is just an external service that verifies API keys. A client backend uses a ReqHub client library to call an API,
 which uses a middleware package to forward the request to ReqHub.
