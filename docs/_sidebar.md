@@ -17,7 +17,7 @@
 - Recipes
 
   - [Using Postman](recipes/postman.md)
-  - Add ReqHub to an existing API
+  - [Add ReqHub to an existing API](recipes/existing-api.md)
   - Add ReqHub per-endpoint
   - Set up monthly pricing
   - Set up usage pricing
