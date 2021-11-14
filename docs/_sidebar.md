@@ -18,7 +18,7 @@
 
   - [Using Postman](recipes/postman.md)
   - [Add ReqHub to an existing API](recipes/existing-api.md)
-  - Add ReqHub per-endpoint
+  - [Add ReqHub per-endpoint](recipes/per-endpoint.md)
   - Set up monthly pricing
   - Set up usage pricing
   - Set up a trial period
