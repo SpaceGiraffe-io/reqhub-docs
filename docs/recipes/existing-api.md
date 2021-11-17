@@ -14,7 +14,8 @@ If you're interested in monetizing your API, you can follow our guide on [settin
 For the most part, adding ReqHub to an existing API follows the same steps outlined in our [quickstart guide](/getting-started/quickstart?id=distributing-an-api),
 but your specific codebase or use case may require a different setup.
 
-ReqHub is primarily intended for standalone backend-only web services, but there's no reason it can't be used to monetize portions of an app backend, for example.
+ReqHub is primarily intended for standalone backend-only web services, but there's no reason it can't be used to monetize portions of an app backend or web application.
+See our guide on [per-endpoint configuration](/recipes/per-endpoint.md) for more information.
 
 This guide is intended to help you determine an approach for implementing ReqHub. If you're looking for detailed setup instructions, please refer to the [quickstart](/getting-started/quickstart?id=distributing-an-api) or one of our tutorials.
 
@@ -78,32 +79,15 @@ function myEndpoint(param1, param2) {
 }
 ```
 
-Per-endpoint configuration is supported in all our middleware packages.
-Note that configuring middleware per-endpoint is roughly equivalent to including the authentication code inline. This approach isn't recommended, but it will work!
+Per-endpoint configuration is supported in all our middleware packages. For specific implementation details, see the README for your language or read our recipe for [adding ReqHub per-endpoint](/recipes/per-endpoint.md).
 
-```js
-[route('/my-endpoint')]
-function myEndpoint(request, param1, param2) {
-  // forward ReqHub headers to authenticate the request
-  let response = reqhubMerchantClient.track(request);
-  if (!response.isSuccess) {
-    return notAuthorized;
-  }
-
-  let data = someService.getData(param1, param2);
-  return success(data);
-}
-```
-
-For specific implementation details, see the README for your language or read our recipe for [adding ReqHub per-endpoint](/recipes/per-endpoint.md).
-
-* [.Net](https://github.com/SpaceGiraffe-io/ReqHubDotNet)
-* [NodeJs](https://github.com/SpaceGiraffe-io/ReqHubNode)
-* [Python](https://github.com/SpaceGiraffe-io/ReqHubPython)
-* [Ruby](https://github.com/SpaceGiraffe-io/ReqHubRuby)
-* [Java](https://github.com/SpaceGiraffe-io/ReqHubJava)
-* [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP)
-* [Go](https://github.com/SpaceGiraffe-io/ReqHubGo)
+* [.Net](https://github.com/SpaceGiraffe-io/ReqHubDotNet#per-endpoint-configuration)
+* [NodeJs](https://github.com/SpaceGiraffe-io/ReqHubNode#per-endpoint-configuration)
+* [Python](https://github.com/SpaceGiraffe-io/ReqHubPython#per-endpoint-configuration)
+* [Ruby](https://github.com/SpaceGiraffe-io/ReqHubRuby#per-endpoint-configuration)
+* [Java](https://github.com/SpaceGiraffe-io/ReqHubJava#per-endpoint-configuration)
+* [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP#per-endpoint-configuration)
+* [Go](https://github.com/SpaceGiraffe-io/ReqHubGo#per-endpoint-configuration)
 
 #### That's it!
 
