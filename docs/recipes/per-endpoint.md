@@ -26,6 +26,8 @@ See the per-endpoint section in the README for your language to set it up!
 
 You can include multiple ReqHub APIs in a single project. Each API will still have its own separate ReqHub page, API keys, and subscriptions, but exists in a codebase alongside other APIs.
 
+![Multiple APIs in a single project](https://reqhubprod.blob.core.windows.net/public/docs/multiple-services-single-project.png)
+
 Including multiple APIs in a single web service can be a way to reduce hosting costs. It may reduce the number of servers required, or allow you to switch to a cheaper hosting plan.
 
 We're currently using this approach ourselves in order to reduce hosting costs for some of our smaller services. For example, our [public test API](https://reqhub.io/SpaceGiraffe/Public-test-API), [email API](https://reqhub.io/SpaceGiraffe/email), [SMS API](https://reqhub.io/SpaceGiraffe/sms), and a handful of other APIs use per-endpoint configuration within a single project.
@@ -53,8 +55,9 @@ This may seem odd from a technical standpoint, but it makes for nice-looking URL
 
 If you have an API that you're using as an app backend and want to distribute some aspect of it,
 you can do so without creating additional deployments or converting the entire API to use ReqHub.
-
 For example, you may want to provide API access to your application without duplicating code into a separate project.
+
+![Multiple APIs in a single project](https://reqhubprod.blob.core.windows.net/public/docs/multiple-services-existing-project.png)
 
 There are a couple ways to go about doing this.
 
