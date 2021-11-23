@@ -1,7 +1,11 @@
 
+# Setting up Stripe
+
 ## Prerequisites
 
 The following steps require a ReqHub account. Make sure you're logged in by [signing in](https://reqhub.io/login) or [signing up](https://reqhub.io/create-account).
+
+----
 
 ## Connect with Stripe
 
@@ -18,7 +22,7 @@ Once that's completed, you can set up pricing.
 
 ## Adding pricing plans
 
-On pages for APIs you have created, you should now see a button to add pricing plans.
+On one of your API pages, you should now see a button to add pricing plans.
 
 ![Add a pricing plan](https://reqhubprod.blob.core.windows.net/public/docs/add-pricing-plan.png)
 
