@@ -62,7 +62,7 @@ If you need inspiration, below are some common plan names found around the Inter
 *Absurd (nobody really does this ...yet)*
 * Potato
 * Horse
-* Giraffe (obviously Giraffe would be highest in this hierarchy)
+* Giraffe (obviously Giraffe would be highest)
 
 In case those aren't good enough, you can also mix and match for gems like "Platinum Hobbyist Plus".
 
