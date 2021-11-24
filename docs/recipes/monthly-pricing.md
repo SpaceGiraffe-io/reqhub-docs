@@ -29,6 +29,43 @@ Clicking that button will take you to the pricing plan form, where you'll see a 
 
 Continue reading for a look at some of the finer points to the options available.
 
+#### Plan names
+
+You can call your plans whatever you want, but try to keep your plan names short and sweet.
+If you need inspiration, below are some common plan names found around the Internet.
+
+*By audience*
+* Hobbyist
+* Dev (or "Developer")
+* Pro (or "Professional")
+* Elite
+* Enterprise
+
+*By Metal tier*
+* Bronze
+* Silver
+* Gold
+* Platinum
+
+*By renewal period*
+* Monthly
+* Quarterly
+* Annual
+
+*By level*
+* Basic
+* Advanced
+* Super
+* Premium
+* Plus (or "+"; this can also be a suffix, like "Premium plus")
+
+*Absurd (nobody really does this ...yet)*
+* Potato
+* Horse
+* Giraffe (obviously Giraffe would be highest in this hierarchy)
+
+In case those aren't good enough, you can also mix and match for gems like "Platinum Hobbyist Plus".
+
 #### Pricing & billing options
 
 You can set up pricing for recurring billing, per-request usage-based pricing, or both.
@@ -56,7 +93,8 @@ For an in-depth look at subscriptions in ReqHub, check out our guide on [how sub
 
 #### Biweekly, quarterly, and annual plans
 
-If you're looking to price your API other than monthly, ReqHub also supports subscription intervals of 2 weeks, 3 months, or 1 year.
+It doesn't have to be monthly! ReqHub also supports subscription intervals of 2 weeks, 3 months, or 1 year.
+For example, to complement a plan of $10 per month, you could also offer a discounted annual plan for $99.
 
 ![Subscription intervals](https://reqhubprod.blob.core.windows.net/public/docs/pricing-subscription-intervals.png)
 
