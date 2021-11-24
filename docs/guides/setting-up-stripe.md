@@ -22,17 +22,20 @@ Once that's completed, you can set up pricing.
 
 ## Adding pricing plans
 
-On one of your API pages, you should now see a button to add pricing plans.
+On your API pages, you should now see a button to add pricing plans under the &#x1F4B3; **Plans & pricing** section.
 
 ![Add a pricing plan](https://reqhubprod.blob.core.windows.net/public/docs/add-pricing-plan.png)
 
-Fill out the form with the pricing details you want. You can set up pricing for recurring billing, per-request usage-based pricing, and trial periods. If you want more information on pricing, check out our guide on [how pricing works](/guides/how-pricing-works).
+Fill out the form with the pricing details you want. You can set up pricing for recurring billing, per-request usage-based pricing, and trial periods.
 
 ![Pricing plan form](https://reqhubprod.blob.core.windows.net/public/docs/pricing-plan-form.png)
 
 Once you've created some plans, they'll look something like this to other users.
 
 ![Pricing plans](https://reqhubprod.blob.core.windows.net/public/docs/pricing-plans.png)
+
+For more information about setting up pricing, check out our recipes for [setting up monthly pricing](/recipes/monthly-pricing.md), [setting up usage pricing](/recipes/usage-pricing.md), and [configuring trial periods](/recipes/usage-pricing.md).
+You may also want to see our guide on [how subscriptions work](/guides/how-subscriptions-work).
 
 #### That's it!
 

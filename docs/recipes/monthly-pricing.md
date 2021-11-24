@@ -17,15 +17,42 @@ If you haven't already, [set up Stripe](guides/setting-up-stripe.md). You should
 
 You can also find a button in the [account section](https://dev.reqhub.io/account).
 
-## Adding pricing plans
+## Add a pricing plan
 
-On one of your API pages, you should see a button to add pricing plans.
+On your API pages, you should see a button to add a pricing plan under the &#x1F4B3; **Plans & pricing** section.
 
 ![Add a pricing plan](https://reqhubprod.blob.core.windows.net/public/docs/add-pricing-plan.png)
 
-Fill out the form with the pricing details you want. You can set up pricing for recurring billing, per-request usage-based pricing, and trial periods. If you want more information on pricing, check out our guide on [how pricing works](/guides/how-pricing-works).
+Clicking that button will take you to the pricing plan form, where you'll see a bunch of options for setting up your pricing plan.
 
 ![Pricing plan form](https://reqhubprod.blob.core.windows.net/public/docs/pricing-plan-form.png)
+
+Continue reading for a look at some of the finer points to the options available.
+
+#### Pricing & billing options
+
+You can set up pricing for recurring billing, per-request usage-based pricing, or both.
+
+**Base price** - The base price is the fixed subscription cost.
+This amount is charged when a user subscribes for the first time, and then every time the subscription renews.
+For example, if you set up your plan with a base price of `$10.00` for a subscription interval of `monthly`,
+your users would be charged $10 when they subscribe, then $10 each month thereafter on the day they started the subscription.
+
+**Usage price** - The usage price is a variable component that is calculated according to the number of requests the user makes to the API.
+For example, you can use this field to charge $5 per 1000 requests made to your API.
+Setting the usage price will enable the **Usage billing options** fields, which control the cost per request for your API.
+See our recipe on [setting up usage pricing](/recipes/usage-pricing) for more information.
+
+**Combined pricing** - There's no reason you have to use only one pricing method or the other&mdash;you can use both!
+For example, you can create a plan offering your API at a base price of $10 per month with an additional charge of $5 per 1000 requests.
+This is useful if you want to offer a plan for low-volume customers featuring a reduced monthly cost and added usage charges.
+
+**No pricing!** - If you leave the base price and usage price both at `$0.00`, the plan will allow users to access your API for free.
+Card details are not required for users subscribing to a free plan. Creating a free plan can be a good way to allow entry-level access to
+an API product. See our recipe for [restricing functionality by plan](/recipes/functionality-by-plan). Note that if you're planning on
+offering your API for free with no paid plans, you don't need to create any pricing plans.
+
+For an in-depth look at subscriptions in ReqHub, check out our guide on [how subscriptions work](/guides/how-subscriptions-work).
 
 #### Biweekly, quarterly, and annual plans
 

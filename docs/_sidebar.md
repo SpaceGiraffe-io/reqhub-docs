@@ -20,10 +20,10 @@
   - [Add ReqHub to an existing API](recipes/existing-api.md)
   - [Add ReqHub per-endpoint](recipes/per-endpoint.md)
   - [Set up monthly pricing](recipes/monthly-pricing.md)
-  - Set up usage pricing
-  - Set up a trial period
+  - [Set up usage pricing](recipes/usage-pricing.md)
+  - [Set up a trial period](recipes/trial-periods.md)
   - [Test a pricing plan](recipes/simulating-pricing-plans.md)
-  - Restrict functionality by plan
+  - [Restrict functionality by plan](recipes/functionality-by-plan.md)
   - Create a client library
   - Publish to the Marketplace
   - Multiple environments
@@ -33,7 +33,7 @@
   - [Setting up Stripe](guides/setting-up-stripe.md)
   - [Writing your own middleware](guides/middleware.md)
   - Marketing your API
-  - How pricing works
+  - How subscriptions work
   - Making user-friendly docs
   - Troubleshooting
 
