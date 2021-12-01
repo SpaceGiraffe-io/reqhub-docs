@@ -58,5 +58,17 @@ For example, if you would like to charge $0.01 for 1 million requests, you shoul
 
 You can choose between `Continuous` and `Integral` billing modes.
 
-Just reading about it is confusing as hell, so here are the graphs:
+Before we say anything, here are the graphs:
+
+![Continuous billing mode](https://reqhubprod.blob.core.windows.net/public/docs/continuous-billing-mode.png)
+
+![Integral billing mode](https://reqhubprod.blob.core.windows.net/public/docs/integral-billing-mode.png)
+
+Both charts are using a pricing scheme of $10 per 1000 requests, but the behavior is very different.
+
+With **continuous billing mode**, the unit of measure is one request. 500 requests will cost $5.00.
+
+By contrast, **Integral billing mode**&mdash;that's integral as in "integer", or consisting of a whole number; not related to calculus integrals&mdash;
+treats the `Unit quantity` as the unit of measure, so in this example the customer pays in units of 1000. Then 500 requests will cost $0.00
+and the customer would only be charged for usage if they reach the threshold of 1000 requests.
 
