@@ -67,8 +67,22 @@ Before we say anything, here are the graphs:
 Both charts are using a pricing scheme of $10 per 1000 requests, but the behavior is very different.
 
 With **continuous billing mode**, the unit of measure is one request. 500 requests will cost $5.00.
+Obviously this is a bit steep, but this is a pretty common pricing method, especially amont cloud service providers.
 
-By contrast, **Integral billing mode**&mdash;that's integral as in "integer", or consisting of a whole number; not related to calculus integrals&mdash;
+By contrast, **Integral billing mode**&mdash;that's integral as in "integer", consisting of a whole number; not related to integrals from calculus&mdash;
 treats the `Unit quantity` as the unit of measure, so in this example the customer pays in units of 1000. Then 500 requests will cost $0.00
-and the customer would only be charged for usage if they reach the threshold of 1000 requests.
+and the customer would only be charged for usage when they reached the threshold of 1000 requests.
+
+#### That's it!
+
+Once you've created some plans with usage pricing, they'll look something like this to other users.
+The middle plan uses the `continuous` billing mode, and the other two use `integral`.
+
+![Usage pricing plans](https://reqhubprod.blob.core.windows.net/public/docs/pricing-plans-usage.png)
+
+## Next steps
+
+* [Testing pricing plans](/recipes/simulating-pricing-plans)
+* Marketing
+* Making user-friendly docs
 
