@@ -9,6 +9,12 @@ Additionally, your account needs to be connected with Stripe in order to create 
 
 ----
 
+## Usage pricing
+
+Usage pricing is a variable component to a subscription that is calculated according to the number of requests the user makes to the API.
+
+For example, you can charge $5 for 1000 requests. You can also determine whether each request would cost $0.005, or if you'd like to bill in units of 1000.
+
 ## Make sure Stripe is set up
 
 If you haven't already, [set up Stripe](guides/setting-up-stripe.md). You should see a button like this on your API pages:
@@ -28,8 +34,6 @@ Clicking that button will take you to the pricing plan form.
 In this recipe we'll be focusing on the usage options specifically. For more general information about setting up plans, check out our recipe for [setting up monthly pricing](recipes/monthly-pricing.md).
 
 #### Set up usage pricing
-
-Usage pricing is a variable component to a subscription that is calculated according to the number of requests the user makes to the API.
 
 In order to add usage pricing to your plan, under **Subscription price** enter a dollar amount in the `Usage price` field.
 This will enable the **Usage billing options** fields, which control the cost per request for your API.
@@ -60,9 +64,11 @@ You can choose between `Continuous` and `Integral` billing modes.
 
 This can be pretty confusing, so before we say anything, here are the graphs:
 
-![Continuous billing mode](https://reqhubprod.blob.core.windows.net/public/docs/continuous-billing-mode.png)
+![Billing modes](https://reqhubprod.blob.core.windows.net/public/docs/billing-modes.png)
 
-![Integral billing mode](https://reqhubprod.blob.core.windows.net/public/docs/integral-billing-mode.png)
+<!--![Continuous billing mode](https://reqhubprod.blob.core.windows.net/public/docs/continuous-billing-mode.png)-->
+
+<!--![Integral billing mode](https://reqhubprod.blob.core.windows.net/public/docs/integral-billing-mode.png)-->
 
 Both charts are using a pricing scheme of $10 per 1000 requests, but the behavior is very different.
 
