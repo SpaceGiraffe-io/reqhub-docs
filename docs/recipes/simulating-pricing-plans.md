@@ -43,6 +43,10 @@ For specific usage information, see the README for your language:
 * [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP#plan-information)
 * [Go](https://github.com/SpaceGiraffe-io/ReqHubGo#plan-information)
 
+#### That's it!
+
+Go test your plans! &#x1f60e;
+
 ## Next steps
 Marketing
 Making user-friendly docs
