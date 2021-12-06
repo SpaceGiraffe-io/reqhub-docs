@@ -24,9 +24,9 @@
   - [Set up a trial period](recipes/trial-periods.md)
   - [Test a pricing plan](recipes/simulating-pricing-plans.md)
   - [Restrict functionality by plan](recipes/functionality-by-plan.md)
-  - Create a client library
-  - Publish to the Marketplace
-  - Multiple environments
+  - [Create a client library](recipes/client-library.md)
+  - [Publish to the Marketplace](recipes/publish-to-marketplace.md)
+  - [Multiple environments](recipes/multiple-environments.md)
 
 - Guides
 
