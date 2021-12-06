@@ -5,18 +5,19 @@
 
 The following steps require that you have connected your account with Stripe. Please see our guide on [setting up Stripe](/guides/setting-up-stripe).
 
+This recipe also assumes you have created at least one pricing plan. For more information on creating plans, check out our recipe for [setting up monthly pricing](/recipes/monthly-pricing).
+
 ----
 
 ## Simulating a plan
 
 You can test plans you've created using the `Simulate` button. Your requests will appear as if you are currently subscribed to the simulated plan, but without incurring any subscription charges.
-This is useful for debugging purposes, such as if you restrict functionality in your API by plan.
 
 ![Simulating a plan](https://reqhubprod.blob.core.windows.net/public/docs/simulate-plan.png)
 
 ## Plan context
 
-While simulating a plan, you will have access to the following context information in your API:
+Each of the ReqHub middleware packages provide the following context information:
 
 ```js
 {
@@ -29,17 +30,18 @@ While simulating a plan, you will have access to the following context informati
 }
 ```
 
-ReqHub provides the same data for live subscriptions. You can use this data to adjust or restrict functionality.
+You can use this information to [adjust or restrict functionality](/recipes/functionality-by-plan).
+This data is available for both live and simulated subscriptions.
 
 For specific usage information, see the README for your language:
 
-* [.Net](https://github.com/SpaceGiraffe-io/ReqHubDotNet)
-* [NodeJs](https://github.com/SpaceGiraffe-io/ReqHubNode)
-* [Python](https://github.com/SpaceGiraffe-io/ReqHubPython)
-* [Ruby](https://github.com/SpaceGiraffe-io/ReqHubRuby)
-* [Java](https://github.com/SpaceGiraffe-io/ReqHubJava)
-* [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP)
-* [Go](https://github.com/SpaceGiraffe-io/ReqHubGo)
+* [.Net](https://github.com/SpaceGiraffe-io/ReqHubDotNet#plan-information)
+* [NodeJs](https://github.com/SpaceGiraffe-io/ReqHubNode#plan-information)
+* [Python](https://github.com/SpaceGiraffe-io/ReqHubPython#plan-information)
+* [Ruby](https://github.com/SpaceGiraffe-io/ReqHubRuby#plan-information)
+* [Java](https://github.com/SpaceGiraffe-io/ReqHubJava#plan-information)
+* [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP#plan-information)
+* [Go](https://github.com/SpaceGiraffe-io/ReqHubGo#plan-information)
 
 ## Next steps
 Marketing

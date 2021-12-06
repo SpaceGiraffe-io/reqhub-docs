@@ -5,7 +5,7 @@
 
 The following steps require a ReqHub account. Make sure you're logged in by [signing in](https://reqhub.io/login) or [signing up](https://reqhub.io/create-account).
 
-If you're interested in monetizing your API, you can follow our guide on [setting up Stripe](guides/setting-up-stripe.md).
+If you're interested in monetizing your API, you can follow our guide on [setting up Stripe](guides/setting-up-stripe).
 
 ----
 
