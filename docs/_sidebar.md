@@ -24,16 +24,17 @@
   - [Set up a trial period](recipes/trial-periods.md)
   - [Test a pricing plan](recipes/simulating-pricing-plans.md)
   - [Restrict functionality by plan](recipes/functionality-by-plan.md)
-  - [Create a client library](recipes/client-library.md)
+  <!--[Create a client library](recipes/client-library.md) - commenting these out until there's a better way than "write your library in all the languages" - a Yeoman generator and auto-publisher or something -->
+  <!--[Using Swagger/OpenAPI](recipes/using-swagger.md)-->
   - [Publish to the Marketplace](recipes/publish-to-marketplace.md)
   - [Multiple environments](recipes/multiple-environments.md)
 
 - Guides
 
   - [Setting up Stripe](guides/setting-up-stripe.md)
-  - [Writing your own middleware](guides/middleware.md)
-  - Marketing your API
-  - How subscriptions work
-  - Making user-friendly docs
-  - Troubleshooting
+  - [Writing your own middleware](guides/writing-your-own-middleware.md)
+  - [Marketing your API](guides/marketing-your-api.md)
+  - [How subscriptions work](guides/how-subscriptions-work.md)
+  - [Making user-friendly pages](guides/user-friendly-pages.md)
+  - [Troubleshooting](guides/troubleshooting.md)
 
