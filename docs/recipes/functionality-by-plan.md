@@ -78,6 +78,7 @@ if (isTrial()) {
 #### Rate-limiting users
 
 Since you have access to a unique client ID, you could perform user-specific operations like rate limiting.
+The following example limits a user to 1 million requests in the last 30 seconds:
 
 ```js
 // pseudocode
