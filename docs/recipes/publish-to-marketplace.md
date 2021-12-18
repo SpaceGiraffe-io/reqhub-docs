@@ -32,13 +32,27 @@ Towards the bottom, you'll see a `Marketplace` section where you can change the 
 
 #### Card images and backgrounds
 
-
-
 By default, the card appearance looks like this:
 
 ![Default card appearance](https://reqhubprod.blob.core.windows.net/public/docs/default-card-appearance.png)
 
+You can change the logo and background to suit your brand or service. Logos should be `92x92 px` and backgrounds should be at least `576x384 px`.
+
+For example, we used an icon with a gradient for our [email API](https://reqhub.io/SpaceGiraffe/email):
+
+![Email API example](https://reqhubprod.blob.core.windows.net/public/docs/email-api-example.png)
+
 #### Category & tags
+
+You can set the category and tags, which provide additional keywords for users to find your API.
+
+For example, here are the category and tag fields we used for our email API:
+
+![Category and tags form fields for our email API](https://reqhubprod.blob.core.windows.net/public/docs/category-tags.png)
+
+This will cause the email API to appear in searches for the category or any of the tags, like "communication":
+
+![Tags search results](https://reqhubprod.blob.core.windows.net/public/docs/tags-search-results.png)
 
 #### That's it!
 
