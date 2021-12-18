@@ -35,6 +35,6 @@
   - [Writing your own middleware](guides/writing-your-own-middleware.md)
   - [Marketing your API](guides/marketing-your-api.md)
   - [How subscriptions work](guides/how-subscriptions-work.md)
-  - [Making user-friendly pages](guides/user-friendly-pages.md)
+  <!--- [Making user-friendly pages](guides/user-friendly-pages.md)-->
   - [Troubleshooting](guides/troubleshooting.md)
 
