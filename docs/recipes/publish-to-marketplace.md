@@ -36,7 +36,7 @@ By default, the card appearance looks like this:
 
 ![Default card appearance](https://reqhubprod.blob.core.windows.net/public/docs/default-card-appearance.png)
 
-You can change the logo and background to suit your brand or service. Logos should be `92x92 px` and backgrounds should be at least `576x384 px`.
+You can change the logo and background to suit your brand or service. Logos should be `92x92 px` and backgrounds should be at least `576x384 px` for best results.
 
 For example, we used an icon with a gradient for our [email API](https://reqhub.io/SpaceGiraffe/email):
 
