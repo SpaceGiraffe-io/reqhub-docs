@@ -17,13 +17,13 @@
 - Recipes
 
   - [Add ReqHub to an existing API](recipes/existing-api.md)
+  - [Create a private API](recipes/create-a-private-api.md)
   - [Add ReqHub per-endpoint](recipes/per-endpoint.md)
   - [Set up monthly pricing](recipes/monthly-pricing.md)
   - [Set up usage pricing](recipes/usage-pricing.md)
   - [Set up a trial period](recipes/trial-periods.md)
   - [Test a pricing plan](recipes/simulating-pricing-plans.md)
   - [Publish to the Marketplace](recipes/publish-to-marketplace.md)
-  - [Create a private API](recipes/create-a-private-api.md)
   - [Restrict functionality by plan](recipes/functionality-by-plan.md)
   - [Using Postman](recipes/postman.md)
   <!--[Using Swagger/OpenAPI](recipes/using-swagger.md)-->
