@@ -16,23 +16,25 @@
 
 - Recipes
 
-  - [Using Postman](recipes/postman.md)
   - [Add ReqHub to an existing API](recipes/existing-api.md)
   - [Add ReqHub per-endpoint](recipes/per-endpoint.md)
   - [Set up monthly pricing](recipes/monthly-pricing.md)
   - [Set up usage pricing](recipes/usage-pricing.md)
   - [Set up a trial period](recipes/trial-periods.md)
   - [Test a pricing plan](recipes/simulating-pricing-plans.md)
-  - [Restrict functionality by plan](recipes/functionality-by-plan.md)
-  <!--[Create a client library](recipes/client-library.md) - commenting these out until there's a better way than "write your library in all the languages" - a Yeoman generator and auto-publisher or something -->
-  <!--[Using Swagger/OpenAPI](recipes/using-swagger.md)-->
   - [Publish to the Marketplace](recipes/publish-to-marketplace.md)
+  - [Create a private API](recipes/create-a-private-api.md)
+  - [Restrict functionality by plan](recipes/functionality-by-plan.md)
+  - [Using Postman](recipes/postman.md)
+  <!--[Using Swagger/OpenAPI](recipes/using-swagger.md)-->
   - [Multiple environments](recipes/multiple-environments.md)
 
 - Guides
 
   - [Setting up Stripe](guides/setting-up-stripe.md)
   - [Writing your own middleware](guides/writing-your-own-middleware.md)
+  <!--[Creating a client library](guides/client-library.md) - commenting these out until there's a better way than "write your library in all the languages" - a Yeoman generator and auto-publisher or something -->
+  <!--[Microservices](guides/microservices.md)-->
   - [Marketing your API](guides/marketing-your-api.md)
   - [How subscriptions work](guides/how-subscriptions-work.md)
   <!--- [Making user-friendly pages](guides/user-friendly-pages.md)-->
