@@ -34,7 +34,7 @@ A warning will appear if you try to do this:
 
 #### That's it!
 
-That's how you can create a private API! &#x1f511;
+That's how you create a private API! &#x1f511;
 
 ## Next steps
 
