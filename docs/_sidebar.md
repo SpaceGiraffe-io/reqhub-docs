@@ -1,7 +1,7 @@
 - Getting started
 
   - [Quick start](getting-started/quickstart.md)
-  - [How it works](getting-started/overview.md)
+  - [How it works](getting-started/how-it-works.md)
 
 - Tutorials
 
