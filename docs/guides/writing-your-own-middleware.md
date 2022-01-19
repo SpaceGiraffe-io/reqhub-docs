@@ -36,7 +36,9 @@ It should contain the following headers:
 
 This is the request from your API to ReqHub for verification.
 
-It should include the client headers in the new request, and should add the following headers:
+This should be a POST request to `https://api.reqhub.io/req`.
+
+The request must include the client headers, and should add the following merchant headers:
 
 * `MerchantToken` - base64-encoded HMACSHA256 hash (more on that later)
 * `MerchantKey` - your publisher public key from ReqHub
