@@ -5,6 +5,15 @@ This page contains details about error codes you may receive when attempting to 
 
 Our goal is that you never have to end up on this page. Since you're here, we hope to get you off of it as soon as possible and back on your way.
 
+* [headers_missing](#headers_missing)
+* [url_mismatch](#url_mismatch)
+* [api_not_found](#api_not_found)
+* [merchant_signature_invalid](#merchant_signature_invalid)
+* [client_not_found](#client_not_found)
+* [product_mismatch](#product_mismatch)
+* [client_signature_invalid](#client_signature_invalid)
+* [subscription_required](#subscription_required)
+
 #### headers_missing
 
 Occurs if any of the required ReqHub headers are missing.
@@ -104,16 +113,44 @@ The trick is usually making sure the correct value is being accessed.
 
 #### api_not_found
 
-Occurs if ReqHub was unable to match an API to the publisher's public key from the `MerchantKey` header.
+ReqHub uses the public key in the `MerchantKey` header to match a request to an API. This error occurs if ReqHub was unable to match an API to the API provider's public key.
 
-Possible causes:
-* ReqHub middleware is not configured correctly in the API. Ensure the keys are present and you are using the correct publisher keys. Verify that you haven't mixed up the public and private key. Verify no characters were lost while copy-pasting.
+This is most likely caused by a misconfiguration in the API, but can also be caused by an incorrect middleware implementation.
 
-see the quickstart, or the README for your language:
+To fix a misconfigured API, check the following items:
 
-[readme links for the publisher header]
+* Verify the keys are for the correct API
+* Ensure the keys are present in the configuration
+* Check that the publisher keys are used, not the client keys
+* Check that the public and private keys aren't mixed up
+* Check that no characters were lost while copy-pasting
 
-[probably want to work on wording/formatting for these ones]
+For additional information on configuring your API, see our [quickstart guide](getting-started/quickstart) or the README for your language:
+
+* [.Net](https://github.com/SpaceGiraffe-io/ReqHubDotNet#distributing-an-api)
+* [NodeJs](https://github.com/SpaceGiraffe-io/ReqHubNode#distributing-an-api)
+* [Python](https://github.com/SpaceGiraffe-io/ReqHubPython#distributing-an-api)
+* [Ruby](https://github.com/SpaceGiraffe-io/ReqHubRuby#distributing-an-api)
+* [Java](https://github.com/SpaceGiraffe-io/ReqHubJava#distributing-an-api)
+* [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP#distributing-an-api)
+* [Go](https://github.com/SpaceGiraffe-io/ReqHubGo#distributing-an-api)
+
+The next section is most likely only relevant if you are trying to implement a custom middleware. To troubleshoot your middleware, check the following items:
+
+* Ensure the correct value is being used to set the `MerchantKey` header
+* Check that the client public key isn't being used to set the `MerchantKey` header instead of the publisher key
+* Check that the private key isn't being used to set the `MerchantKey` header
+* Check that all characters are present in the `MerchantKey` header and none have been added
+
+For additional information on implementing a middleware, see our guide on [writing your own middleware](guides/writing-your-own-middleware) or check out the source code for the official middleware implementations:
+
+* [.Net](https://github.com/SpaceGiraffe-io/ReqHubDotNet)
+* [NodeJs](https://github.com/SpaceGiraffe-io/ReqHubNode)
+* [Python](https://github.com/SpaceGiraffe-io/ReqHubPython)
+* [Ruby](https://github.com/SpaceGiraffe-io/ReqHubRuby)
+* [Java](https://github.com/SpaceGiraffe-io/ReqHubJava)
+* [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP)
+* [Go](https://github.com/SpaceGiraffe-io/ReqHubGo)
 
 #### merchant_signature_invalid
 
@@ -121,14 +158,7 @@ see the quickstart, or the README for your language:
 
 Occurs if ReqHub was unable to match a record to the client's public key from the `ClientKey` header.
 
-Possible causes:
 * HTTP client is not configured correctly when calling an API. Ensure the keys are present and you are using the correct client keys. Verify that you haven't mixed up the public and private key. Verify no characters were lost while copy-pasting.
-
-see the quickstart, or the README for your language:
-
-[readme links for calling an API header]
-
-[probably want to work on wording/formatting for these ones]
 
 #### product_mismatch
 
