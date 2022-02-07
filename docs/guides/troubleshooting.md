@@ -140,7 +140,7 @@ The next section is most likely only relevant if you are trying to implement a c
 * Ensure the correct value is being used to set the `MerchantKey` header
 * Check that the client public key isn't being used to set the `MerchantKey` header instead of the publisher key
 * Check that the private key isn't being used to set the `MerchantKey` header
-* Check that all characters are present in the `MerchantKey` header and none have been added
+* Check that all characters are present in the `MerchantKey` header and none have been added or lost
 
 For additional information on implementing a middleware, see our guide on [writing your own middleware](guides/writing-your-own-middleware) or check out the source code for the official middleware implementations:
 
@@ -154,6 +154,29 @@ For additional information on implementing a middleware, see our guide on [writi
 
 #### merchant_signature_invalid
 
+Indicates a problem with the middleware. We don't expect you to receive this error unless you are [writing your own middleware](/guides/writing-your-own-middleware.md).
+
+This error occurs when ReqHub is unable to rebuild the token hash to match the value from the `MerchantToken` header, or if the `Merchant` headers are invalid for any of the reasons below.
+
+* The `Merchant` headers are duplicates from a previous request
+* Unable to parse the `MerchantTimestamp` header into a number
+* The timestamp indicates the request is too old (can happen if the timestamp is in seconds rather than milliseconds)
+
+It can also indicate that there are issues with the other headers.
+For example, if a valid token is reused with a different timestamp in the `MerchantTimestamp` header, ReqHub will be unable to rebuild the token because a different timestamp was used to create the original.
+The same is true of other headers, such as `MerchantNonce` or `MerchantKey`, since they are also used to generate the token.
+See the [token hash](/guides/writing-your-own-middleware.md?id=token-hash) section of our guide on [writing your own middleware](/guides/writing-your-own-middleware.md).
+
+To fix this error, try the following items:
+
+* Verify that the token [is being generated correctly](/guides/writing-your-own-middleware.md?id=token-hash) - the order of the concatenated items matters!
+* Check that each header is correct as described in the guide on [writing your own middleware](/guides/writing-your-own-middleware.md?id=generating-the-headers)
+* Check that no characters are being lost (or added) between generating and setting the headers
+* Check that `MerchantTimestamp` is in milliseconds and not seconds (it should be 13 digits)
+* Ensure that the network connection between your API and ReqHub isn't causing timeouts
+
+Otherwise, see our guide on [writing your own middleware](guides/writing-your-own-middleware).
+
 #### client_not_found
 
 Occurs if ReqHub was unable to match a record to the client's public key from the `ClientKey` header.
@@ -162,7 +185,14 @@ Occurs if ReqHub was unable to match a record to the client's public key from th
 
 #### product_mismatch
 
+This error occurs if the client and publisher keys are both valid, but are from different APIs. This is an easy mistake to make if you are managing multiple APIs or client connections.
+
+* For an API you control, ensure the publisher keys were copied from the correct API page.
+* When calling an API, ensure the client keys were copied from the correct API page.
+
 #### client_signature_invalid
+
+Indicates an issue with generating the ReqHub headers while sending a request to an API.
 
 #### subscription_required
 
