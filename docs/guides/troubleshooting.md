@@ -14,6 +14,7 @@ Our goal is that you never have to end up on this page. Since you're here, we ho
 * [client_signature_invalid](#client_signature_invalid)
 * [subscription_required](#subscription_required)
 
+---
 #### headers_missing
 
 Occurs if any of the required ReqHub headers are missing.
@@ -69,6 +70,7 @@ For example, the string `"null"` in the `MerchantKey` header will produce an `ap
 
 Our guide on [writing your own middleware](/guides/writing-your-own-middleware.md) may be helpful.
 
+---
 #### url_mismatch
 
 Occurs when the `ClientUrl` and `MerchantUrl` header values do not match **exactly**.
@@ -111,13 +113,14 @@ In the official middlewares, we use the `path` URL component for simplicity.
 This is because the `path` is usually readily available and the middleware doesn't have to be aware of domains.
 The trick is usually making sure the correct value is being accessed.
 
+---
 #### api_not_found
 
 ReqHub uses the public key in the `MerchantKey` header to match a request to an API. This error occurs if ReqHub was unable to match an API to the API provider's public key.
 
 This is most likely caused by a misconfiguration in the API, but can also be caused by an incorrect middleware implementation.
 
-To fix a misconfigured API, check the following items:
+Check the following configuration items:
 
 * Verify the keys are for the correct API
 * Ensure the keys are present in the configuration
@@ -125,38 +128,21 @@ To fix a misconfigured API, check the following items:
 * Check that the public and private keys aren't mixed up
 * Check that no characters were lost while copy-pasting
 
-For additional information on configuring your API, see our [quickstart guide](getting-started/quickstart) or the README for your language:
-
-* [.Net](https://github.com/SpaceGiraffe-io/ReqHubDotNet#distributing-an-api)
-* [NodeJs](https://github.com/SpaceGiraffe-io/ReqHubNode#distributing-an-api)
-* [Python](https://github.com/SpaceGiraffe-io/ReqHubPython#distributing-an-api)
-* [Ruby](https://github.com/SpaceGiraffe-io/ReqHubRuby#distributing-an-api)
-* [Java](https://github.com/SpaceGiraffe-io/ReqHubJava#distributing-an-api)
-* [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP#distributing-an-api)
-* [Go](https://github.com/SpaceGiraffe-io/ReqHubGo#distributing-an-api)
-
-The next section is most likely only relevant if you are trying to implement a custom middleware. To troubleshoot your middleware, check the following items:
+If you are implementing a custom middleware, check the following items:
 
 * Ensure the correct value is being used to set the `MerchantKey` header
-* Check that the client public key isn't being used to set the `MerchantKey` header instead of the publisher key
+* Check that the `MerchantKey` header is being set with the correct key (publisher public key)
 * Check that the private key isn't being used to set the `MerchantKey` header
 * Check that all characters are present in the `MerchantKey` header and none have been added or lost
 
-For additional information on implementing a middleware, see our guide on [writing your own middleware](guides/writing-your-own-middleware) or check out the source code for the official middleware implementations:
+For more information, see our [quickstart guide](getting-started/quickstart) or our guide on [writing your own middleware](guides/writing-your-own-middleware).
 
-* [.Net](https://github.com/SpaceGiraffe-io/ReqHubDotNet)
-* [NodeJs](https://github.com/SpaceGiraffe-io/ReqHubNode)
-* [Python](https://github.com/SpaceGiraffe-io/ReqHubPython)
-* [Ruby](https://github.com/SpaceGiraffe-io/ReqHubRuby)
-* [Java](https://github.com/SpaceGiraffe-io/ReqHubJava)
-* [PHP](https://github.com/SpaceGiraffe-io/ReqHubPHP)
-* [Go](https://github.com/SpaceGiraffe-io/ReqHubGo)
-
+---
 #### merchant_signature_invalid
 
 Indicates a problem with the middleware. We don't expect you to receive this error unless you are [writing your own middleware](/guides/writing-your-own-middleware.md).
 
-This error occurs when ReqHub is unable to rebuild the token hash to match the value from the `MerchantToken` header, or if the `Merchant` headers are invalid for any of the reasons below.
+This error occurs when ReqHub is unable to rebuild the token hash to match the value from the `MerchantToken` header, or if the `Merchant` headers are invalid for any of the following reasons:
 
 * The `Merchant` headers are duplicates from a previous request
 * Unable to parse the `MerchantTimestamp` header into a number
@@ -175,24 +161,101 @@ To fix this error, try the following items:
 * Check that `MerchantTimestamp` is in milliseconds and not seconds (it should be 13 digits)
 * Ensure that the network connection between your API and ReqHub isn't causing timeouts
 
-Otherwise, see our guide on [writing your own middleware](guides/writing-your-own-middleware).
+For more information, see our guide on [writing your own middleware](guides/writing-your-own-middleware).
 
+---
 #### client_not_found
 
-Occurs if ReqHub was unable to match a record to the client's public key from the `ClientKey` header.
+ReqHub uses the public key in the `ClientKey` header to match a request to an API user. This error occurs if ReqHub was unable to match a user to the client public key.
 
-* HTTP client is not configured correctly when calling an API. Ensure the keys are present and you are using the correct client keys. Verify that you haven't mixed up the public and private key. Verify no characters were lost while copy-pasting.
+This is most likely caused by a misconfigured API client, but can also be caused by an incorrect middleware implementation.
 
+Check the following configuration items:
+
+* Verify the keys are for the correct API
+* Ensure the keys are present in the configuration
+* Check that the client keys are used, not the publisher keys (if this is your own API)
+* Check that the public and private keys aren't mixed up
+* Check that no characters were lost while copy-pasting
+
+If you are implementing an API client, check the following items:
+
+* Ensure all headers on the outgoing request are being set correctly according to our guide on [writing your own middleware](guides/writing-your-own-middleware)
+* Check that the `ClientKey` header is present on the outgoing request
+* Check that all characters are present in the `ClientKey` header and none have been added or lost
+
+If you are implementing a custom middleware, check the following items:
+
+* Ensure the correct value is being used to set the `ClientKey` header
+* Check that the `ClientKey` header is being set correctly&mdash;your middleware should simply forward the value from the incoming request
+* Check that all characters are present in the `ClientKey` header and none have been added or lost
+
+For more information, see our [quickstart guide](getting-started/quickstart) or our guide on [writing your own middleware](guides/writing-your-own-middleware).
+
+---
 #### product_mismatch
 
-This error occurs if the client and publisher keys are both valid, but are from different APIs. This is an easy mistake to make if you are managing multiple APIs or client connections.
+This error occurs if the client and publisher keys are both valid, but for different APIs. This is an easy mistake if you are managing multiple APIs or client connections.
 
-* For an API you control, ensure the publisher keys were copied from the correct API page.
-* When calling an API, ensure the client keys were copied from the correct API page.
+* If it's your own API, ensure the publisher keys were copied from the correct API page
+* If calling an API, ensure the client keys were copied from the correct API page
 
+---
 #### client_signature_invalid
 
 Indicates an issue with generating the ReqHub headers while sending a request to an API.
 
+This error occurs when ReqHub is unable to rebuild the token hash to match the value from the `ClientToken` header, or if the `Client` headers are invalid for any of the following reasons:
+
+* The `Client` headers are duplicates from a previous request
+* Unable to parse the `ClientTimestamp` header into a number
+* The timestamp indicates the request is too old (can happen if the timestamp is in seconds rather than milliseconds)
+
+It can also indicate that there are issues with the other headers.
+For example, if a valid token is reused with a different timestamp in the `ClientTimestamp` header, ReqHub will be unable to rebuild the token because a different timestamp was used to create the original.
+The same is true of other headers, such as `ClientNonce` or `ClientKey`, since they are also used to generate the token.
+See the [token hash](/guides/writing-your-own-middleware.md?id=token-hash) section of our guide on [writing your own middleware](/guides/writing-your-own-middleware.md).
+
+If you are implementing an API client, check the following items:
+
+* Verify that the token [is being generated correctly](/guides/writing-your-own-middleware.md?id=token-hash) - the order of the concatenated items matters!
+* Check that each header is correct as described in the guide on [writing your own middleware](/guides/writing-your-own-middleware.md?id=generating-the-headers)
+* Check that no characters are being lost (or added) between generating and setting the headers
+* Check that `ClientTimestamp` is in milliseconds and not seconds (it should be 13 digits)
+* Ensure that the network connection isn't causing timeouts
+
+If you are implementing a custom middleware, check the following items:
+
+* Ensure that all client header values are being set correctly&mdash;your middleware should simply forward them from the incoming request
+
+For more information, see our guide on [writing your own middleware](guides/writing-your-own-middleware).
+
+---
 #### subscription_required
+
+This error occurs when a client without a paid subscription calls an API that only has paid plans.
+
+This can occur if the client cancels their subscription to the API and attempts to call it again, or if the API owner has changed to only paid plans after the client had already obtained API keys for free.
+This error never occurs for the user that created the API.
+
+The primary way to fix this error is:
+
+* Purchase one of the subscription offerings
+
+Alternatively, you could try the following:
+
+* Convince the owner to offer a free plan
+* Find a free alternative
+* Write your own!
+
+---
+#### That's it!
+
+Hopefully this page helped you fix the issue &#x1f64f;
+
+## Next steps
+
+* [Testing pricing plans](/recipes/simulating-pricing-plans)
+* Marketing
+* Making user-friendly docs
 
