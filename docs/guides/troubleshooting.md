@@ -251,7 +251,7 @@ Alternatively, you could try the following:
 ---
 #### That's it!
 
-Hopefully this page helped you fix the issue &#x1f64f;
+Hopefully this helped! &#x1f64f;
 
 ## Next steps
 
