@@ -6,26 +6,48 @@
 While not required, it may be helpful to understand how to set up pricing plans in ReqHub.
 Check out our recipes for [setting up monthly pricing](/recipes/monthly-pricing) and [setting up usage pricing](/recipes/usage-pricing).
 
-It may also be useful to [set up Stripe](/guides/setting-up-stripe) if you haven't already.
+You may also want to [set up Stripe](/guides/setting-up-stripe) if you haven't already.
 
 ----
 
 ## Basics
 
-Subscriptions are handled through Stripe.
-ReqHub is PCI compliant and does not have any interaction with your credit card details.
-Credit card form fields are provided by Stripe via `iframe` elements.
-The field values never reach our servers or interact with our code.
-Upon submitting a credit card form, the details are sent to Stripe only.
-Stripe then provides a token that ReqHub can interact with.
+Subscriptions are handled through [Stripe](https://stripe.com), ReqHub's payment processor.
+ReqHub uses Stripe's APIs to create and manage subscriptions, but they handle the rest!
 
-API vendors are onboarded as sub-merchants of ReqHub, transactions go through ReqHub.
-
+API vendors are onboarded as sub-merchants of ReqHub through Stripe.
 Anyone who wants to sell an API can become a sub-merchant. See our guide on [setting up Stripe](/guides/setting-up-stripe)!
 
-All subscriptions are managed by ReqHub and not the API vendor.
+When a payment is made, Stripe splits the purchase amount between the API vendor, ReqHub, and Stripe itself.
+The payment breakdown for a subscription payment is as follows:
 
-Payment breakdown -- who gets how much + example with $10
+* Stripe takes [a fee](https://stripe.com/pricing) of 2.9% + 30&cent;
+* ReqHub takes 4%
+* The API vendor gets the rest!
+
+The API vendor's payout can be calculated as `amount - (amount x 0.069) - 0.3`.
+
+For example, a $10 payment would result in:
+
+* Stripe receives $10 x 0.029 + $0.30 = `$0.59`
+* ReqHub receives $10 x 0.04 = `$0.40`
+* The API vendor receives $10 - $0.99 = `$9.01`!
+
+Our 4% is kind of abritrary, but we're not that greedy &#x1f60e;
+If we took 20%, the API vendor would only get $7.41 &#x1f44e;
+
+We think ReqHub should be a good way for **you** to make money, more than we think it should be a good way for **us** to make money.
+
+ReqHub aims to provide a secure and trustworthy marketplace for bying and selling subscriptions to APIs.
+ReqHub is a fully PCI compliant solution (or Stripe would probably shut down our account), and all transactions within ReqHub are between the user and ReqHub, not the third-party API vendors.
+This ensures that all payments are handled consistently and correctly.
+
+Our PCI compliance is achieved by tools provided by Stripe.
+All credit card form fields are provided by Stripe via `iframe` elements.
+Those field values never reach our servers or interact with our code.
+Upon submitting a credit card form, Stripe generates a randomized token that ReqHub can interact with to create and manage subscriptions.
+
+We love PCI compliance&mdash;we don't ever want to know any of your credit card details. We absolutely do not want the responsibility of handling that kind of sensitive data!
 
 ## Initial purchase
 
