@@ -47,16 +47,37 @@ All credit card form fields are provided by Stripe via `iframe` elements.
 Those field values never reach our servers or interact with our code.
 Upon submitting a credit card form, Stripe generates a randomized token that ReqHub can interact with to create and manage subscriptions.
 
-We love PCI compliance&mdash;we don't ever want to know any of your credit card details. We absolutely do not want the responsibility of handling that kind of sensitive data!
+We are very grateful for Stripe's PCI compliance solutions&mdash;we don't ever want to know any of your credit card details.
+We absolutely do not want the responsibility of handling that kind of sensitive data!
 
 ## Initial purchase
 
-A subscription starts when a user purchases a pricing plan for the first time.
+A subscription starts when a user purchases a pricing plan for the first time, or if they subscribe again after canceling.
 
-A credit card is required for all paid plans, even if there is no initial charge, such as when starting a trial. Unpaid plans do not require a credit card.
+A credit card **is required** for all paid plans.
+This is true even if there is no initial charge, such as when subscribing to a usage-only plan or starting a trial.
+Then if the user incurs usage costs or allows a trial to upgrade to a full subscription, the card is present to pay for those services.
 
-After a purchase is made to start a subscription, the API vendor will receive a payout from Stripe.
-The funds will appear in API vendor's bank account after a few days.
+Unpaid plans **do not** require a credit card.
+For this reason, we generally recommend that you provide some aspect of your service under an unpaid plan.
+It provides a better user experience&mdash;people hate entering their credit card information into websites!
+Removing the barrier of providing card information makes it friendlier for new users to interact both with your API and ReqHub as a platform.
+
+We know this because we always grumble when websites make us pay for stuff, especially when we have to enter card details and there's no PayPal button.
+On that note, unfortunately we can't offer PayPal as an alternative payment method because it isn't supported by Stripe (as PayPal is Stripe's main competitor).
+So please try to provide a free plan!
+
+<!--vvvv this kind of needs its own page, or a repeated section on all the pages about subscriptions-->
+<!--We realize that's not practical in all situations, but here are some ways it can be done without giving everything away:-->
+
+<!--* Provide mock data-->
+<!--* Limit the number of results-->
+<!--* Scramble the results-->
+<!--* Limit the number of actions-->
+
+If an initial charge is required to start a subscription, the API vendor will receive a payout from Stripe. Congratulations &#x1f389;!
+This can be viewed from the Stripe dashboard, accessible from the [account page](https://reqhub.io/account) (requires [setting up Stripe](/guides/setting-up-stripe)).
+The funds will appear in the API vendor's bank account after a few days.
 
 #### Trials
 
