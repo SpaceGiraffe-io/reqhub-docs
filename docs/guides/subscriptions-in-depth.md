@@ -1,5 +1,5 @@
 
-# How subscriptions work
+# Subscriptions in depth
 
 #### Prerequisites
 
@@ -67,7 +67,7 @@ We know this because we always grumble when websites make us pay for stuff, espe
 On that note, unfortunately we can't offer PayPal as an alternative payment method because it isn't supported by Stripe (as PayPal is Stripe's main competitor).
 So please try to provide a free plan!
 
-<!--vvvv this kind of needs its own page, or a repeated section on all the pages about subscriptions-->
+<!--vvvv this kind of needs its own page or it's own section-->
 <!--We realize that's not practical in all situations, but here are some ways it can be done without giving everything away:-->
 
 <!--* Provide mock data-->
@@ -79,17 +79,24 @@ If an initial charge is required to start a subscription, the API vendor will re
 This can be viewed from the Stripe dashboard, accessible from the [account page](https://reqhub.io/account) (requires [setting up Stripe](/guides/setting-up-stripe)).
 The funds will appear in the API vendor's bank account after a few days.
 
-#### Trials
+## Trials
 
-When a user starts a trial, they can access it until the duration is reached, ctarting from the date the trial was started.
-If a user cancels and resubscribes to the same trial, it will still end on the original end date.
+A trial allows a user to access a paid plan free of charge for a brief period.
+When the end date is reached, the trial upgrades to a full subscription.
 
-A credit card is required to start a trial, so it can be charged when it ends and upgrades to a full subscription.
-It is not charged upon starting the trial.
+A credit card is required to start a trial, even though there is no immediate payment.
+The card will be charged when the trial upgrades if the plan includes a recurring base price, and will start accumulating usage if the plan includes usage pricing.
+During the trial, usage does not count towards the upgrade cost.
+The user can cancel at any time, which will allow access to the trial until the end date, but will **not** charge the user's card.
 
-The user will be notified before the trial upgrades.
+When a user begins a trial, they can access it only until the initial end date.
+For the most part that doesn't mean anything special, except in certain scenarios.
+For example, if a user changes plans while under a trial, the previous plan will retain its trial end date.
+If the user changes back to that plan, their trial will upgrade to a full subscription on the original end date.
 
-If the user cancels the trial, their card will not be charged at the time when it would have ugpraded to a full subscription.
+The user receives several notifications around trials.
+First is an email receipt upon starting the trial, then a notification 7 days before the end date, and again when it finally upgrades.
+If the user cancels their trial or changes to a non-trial plan, they will receive a notification that their trial has ended.
 
 ## Renewal
 

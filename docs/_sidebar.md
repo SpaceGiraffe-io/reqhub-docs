@@ -36,7 +36,7 @@
   <!--[Creating a client library](guides/client-library.md) - commenting these out until there's a better way than "write your library in all the languages" - a Yeoman generator and auto-publisher or something -->
   <!--[Microservices](guides/microservices.md)-->
   <!--- [Marketing your API](guides/marketing-your-api.md)-->
-  - [How subscriptions work](guides/how-subscriptions-work.md)
+  - [Subscriptions in depth](guides/subscriptions-in-depth.md)
   <!--- [Making user-friendly pages](guides/user-friendly-pages.md)-->
   - [Troubleshooting](guides/troubleshooting.md)
 
