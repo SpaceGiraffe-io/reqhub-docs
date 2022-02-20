@@ -13,7 +13,7 @@ You may also want to [set up Stripe](/guides/setting-up-stripe) if you haven't a
 ## Basics
 
 Subscriptions are handled through [Stripe](https://stripe.com), ReqHub's payment processor.
-ReqHub uses Stripe's APIs to create and manage subscriptions, but they handle the rest!
+ReqHub uses Stripe's APIs to create and manage subscriptions, and Stripe handles the recurring billing, payouts, and all the rest!
 
 API vendors are onboarded as sub-merchants of ReqHub through Stripe.
 Anyone who wants to sell an API can become a sub-merchant. See our guide on [setting up Stripe](/guides/setting-up-stripe)!
@@ -53,11 +53,10 @@ We love PCI compliance&mdash;we don't ever want to know any of your credit card 
 
 A subscription starts when a user purchases a pricing plan for the first time.
 
-A credit card is required for all paid plans, even if there is no initial charge.
+A credit card is required for all paid plans, even if there is no initial charge, such as when starting a trial. Unpaid plans do not require a credit card.
 
-A free plan, with monthly and usage prices of $0.00, will not require a credit card.
-
-The API vendor will receive a payout from Stripe that will appear in their bank account after a few days.
+After a purchase is made to start a subscription, the API vendor will receive a payout from Stripe.
+The funds will appear in API vendor's bank account after a few days.
 
 #### Trials
 
