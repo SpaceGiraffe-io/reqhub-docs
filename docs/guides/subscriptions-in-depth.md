@@ -39,16 +39,13 @@ If we took 20%, the API vendor would only get $7.41 &#x1f44e;
 We think ReqHub should be a good way for **you** to make money, more than we think it should be a good way for **us** to make money.
 
 ReqHub aims to provide a secure and trustworthy marketplace for bying and selling subscriptions to APIs.
-ReqHub is a fully PCI compliant solution (or Stripe would probably shut down our account), and all transactions within ReqHub are between the user and ReqHub, not the third-party API vendors.
+ReqHub is a fully PCI compliant solution, and all transactions within the ReqHub platform are between the user and ReqHub, not the third-party API vendors.
 This ensures that all payments are handled consistently and correctly.
 
 Our PCI compliance is achieved by tools provided by Stripe.
 All credit card form fields are provided by Stripe via `iframe` elements.
 Those field values never reach our servers or interact with our code.
 Upon submitting a credit card form, Stripe generates a randomized token that ReqHub can interact with to create and manage subscriptions.
-
-We are very grateful for Stripe's PCI compliance solutions&mdash;we don't ever want to know any of your credit card details.
-We absolutely do not want the responsibility of handling that kind of sensitive data!
 
 ## Initial purchase
 
@@ -101,32 +98,59 @@ If the user cancels their trial or changes to a non-trial plan, they will receiv
 ## Renewal
 
 Subscriptions renew every time the plan interval is reached, starting from the date of the initial purchase.
-For example, if a subscription has a monthly interval (30 days) and a user subscribed to it on June 15, then the user will be charged 30 days later, on July 15.
+For example, if a subscription has a monthly interval and a user subscribed on June 15, then the subscription will renew on July 15.
 
-Subscription renewals are processed by Stripe.
+When the subscription renews, the user's card is charged if the plan includes a base price or if they have incurred any usage costs.
+Regardless of whether or not there was a charge, the user is provided with a receipt via email.
 
-The user will be notified with an email receipt.
+Upon successful payment, the API vendor will receive a payout from Stripe. Congratulations &#x1f389;!
 
-The API vendor will receive a payout from Stripe that will appear in their bank account after a few days.
+Finally, note that all subscription renewals are processed by Stripe.
+ReqHub does not have any direct involvement in the automatic renewal stage of the subscription lifecycle.
 
 ## Subscription changes
 
-If an API has multiple plans, subscribers can change to a different plan.
+If an API has multiple plans, subscribers can change to a different plan without any interruption in service.
+Subscription changes are somewhat complex, since there are quite a few combinations.
 
-The date the subscription renews does not change if the interval is the same.
-Otherwise, the subscription will renew when the new interval is reached, starting from the date the subscription changed.
+![Plan transitions](https://reqhubprod.blob.core.windows.net/public/docs/plan-transitions.png)
 
-Subscription changes are complex, since each combination of plans requires unique treatment.
+In general, the transition behavior can be summarized with the following:
 
-[table of combinations and a description of how they're handled?]
+* **Free to paid**&mdash;The user pays for the price of the new plan.
+* **Trial to paid**&mdash;The user pays for the price of the new plan. The trial end date remains the same.
+* **Paid to paid**&mdash;The user receives a discount on the initial purchase of the new plan (see [Proration](#Proration) below).
+* **Paid to trial**&mdash;The user receives a credit balance for the amount of time remaining on the current plan. The trial begins.
+* **Paid to free**&mdash;The user receives a credit balance for the amount of time remaining on the current plan.
+
+If the plans have different renewal intervals, the subscription will have a new billing cycle, starting from the date of the plan change.
+The billing cycle does not change if the interval is the same.
+For example, if a user subscribes to a monthly plan on June 15, then changes to an annual plan on June 20, the billing cycle for the new plan will start from June 20 and renew on June 20 of the following year.
+If another user starts a subscribes to a monthly plan on June 15, then changes to another monthly plan on June 20, the billing cycle will remain the same and renew the following month on July 15.
 
 #### Proration
 
-When changing plans, ReqHub will issue a credit for the remaining time on the current plan.
+ReqHub **prorates** subscription changes.
+We apply a credit to the purchase of the new plan for remaining unused paid time on the current plan.
 This usually results in a lower initial purchase price for the new plan.
-If the credit is greater than the cost of the new plan, the remainder will be saved and applied to future subscription renewals.
 
-Credits are only good for the API they were issued for!
+For example, if a user subscribes to a plan that costs $5.00, and wants to switch to a plan that costs $10.00 exactly halfway through their current billing cycle,
+they will receive $2.50 off the initial purchase price of the new plan, for a total of $7.50.
+This is only for the initial purchase&mdash;subsequent renewals in this scenario would still cost the full $10.00.
+
+This can look like you're getting a great discount!
+Not exactly&mdash;it's just being fair.
+Credits applied under proration have already been paid for, and the proration behavior is simply applying the remaining value of the current plan to the new plan.
+
+When changing plans, all usage incurred on the old plan is carried over to the new plan.
+Credit is not applied for usage costs because the billing paradigm is different.
+With a recurring base price, the user is paying upfront for an amount of time to use the API, and credits are applied for the unused portion.
+Usage costs are paid at the end of the billing cycle for having accessed a certain amount of value through the API,
+but since the usage hasn't been paid yet, there is no credit to apply to the new plan.
+
+If the credit is greater than the cost of the new plan, the remainder will be saved and applied to future subscription renewals.
+Just be aware that credits are only good for the API they were issued for!
+Credits do not transfer across APIs.
 
 ## Cancellation
 
