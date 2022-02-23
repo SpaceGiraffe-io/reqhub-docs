@@ -1,17 +1,11 @@
-The whole thing, from creating a project to testing it and getting it into ReqHub with a subscription.
 
-## Create a project
+# Java tutorial
 
-## Get API keys
+#### Prerequisites
 
-## Add ReqHub
+The following steps require a ReqHub account. Make sure you're logged in by [signing in](https://reqhub.io/login) or [signing up](https://reqhub.io/create-account).
 
-## Testing
+----
 
-## Deployment
-
-## Configure pricing (optional)
-### Usage pricing
-
-## Go public (optional)
+## Introduction
 
