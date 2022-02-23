@@ -38,5 +38,6 @@
   <!--- [Marketing your API](guides/marketing-your-api.md)-->
   - [Subscriptions in depth](guides/subscriptions-in-depth.md)
   <!--- [Making user-friendly pages](guides/user-friendly-pages.md)-->
+  <!--- [Roadmap](guides/roadmap.md)-->
   - [Troubleshooting](guides/troubleshooting.md)
 

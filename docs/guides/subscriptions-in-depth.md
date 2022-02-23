@@ -155,27 +155,26 @@ Credits do not transfer across APIs.
 ## Cancellation
 
 Subscriptions can be canceled at any time.
-
-Recurring billing will cease. The card will not be charged again for that subscription.
-
-ReqHub provides credits for the API upon canceling the subscription, which will be applied if the user chooses to subscribe again.
-We would like to allow the user to refund that amount back to their card, but haven't reached a solution for that yet. Stay tuned!
+When a user cancels a subscription, they will continue to have access to the plan until the end of the current period, but recurring billing ends and the subscription will not renew.
+If the user has incurred any usage before the end of the period, the card will be charged for the usage costs, but not for the base price of the subscription.
 
 If a trial is canceled, the card will not be charged at the time when it would have upgraded to a full subscription.
+Usage incurred during a trial is not charged.
 
 ## Payouts
 
-Payouts are handled by Stripe.
+Payouts are handled by Stripe&mdash;ReqHub is not directly involved in issuing payouts.
+Payouts are processed on a daily basis, usually arriving in the API vendor's bank account within 3 days under the statement descriptor of `ReqHub payments`.
 
-They can be viewed from the Stripe dashboard in the account section.
+Payouts can be viewed from the Stripe dashboard, accessible from the [account page](https://reqhub.io/account).
 
-You will receive an email notifying you of the payout.
+![Stripe payouts](https://reqhubprod.blob.core.windows.net/public/docs/payouts-dashboard.png)
 
-Payouts are processed pretty quickly, and should end up in your bank account with a statement descriptor of REQHUB_PAYMENTS_OR_SOMETHING_LIKE_THAT
+ReqHub sends an email notification when the payout is created, but it may still take a few days for the funds to appear in the destination account.
 
 #### That's it!
 
-That's an in-depth look at how subscriptions work in ReqHub.
+That's a full look at how subscriptions work in ReqHub.
 
 If you would like to make your own subscription platform, check out [our subscription engine]().
 
