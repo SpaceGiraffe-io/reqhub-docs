@@ -24,11 +24,21 @@ Let's get started! &#x1f680;
 
 ## Create a project
 
-## Make the endpoint
+Fire up Visual Studio and create a new project.
+
+Find the "ASP.NET Core Web API" project template, give it a name and click **Next**, then click **Create** with the default options.
+
+![Creating a new project in Visual Studio](https://reqhubprod.blob.core.windows.net/public/docs/netcore-project-creation-sequence.png)
 
 With the project created, delete `WeatherForecast.cs` and `Controllers/WeatherForecastController.cs`.
 
-Then create `TutorialController.cs` under the `Controllers/` folder and replace its contents with the following:
+![Deleting default code files](https://reqhubprod.blob.core.windows.net/public/docs/netcore-delete-weatherforecast.png)
+
+With the project ready to go, let's add some code &#x1f4aa;
+
+## Make the endpoint
+
+Now create a file called `TutorialController.cs` under the `Controllers/` folder and replace its contents with the following:
 
 ```js
 using Microsoft.AspNetCore.Mvc;
@@ -55,20 +65,108 @@ namespace NetCoreTutorialApi.Controllers
 
 Great, run it &#x1f60e;
 
-Using the "Try it out" button in the OpenApi UI with some input text like "the cat with the fluffy tail ran for cover because cat reasons" should produce a response like:
+Using the "Try it out" button in the OpenApi UI, enter some input text like "the cat with the fluffy tail ran for cover because cat reasons".
+Execute the request, and you should see a response like the following:
 ```js
 {
   "message": "potato cat bacon potato fluffy tail ran pancakes cover waffles cat reasons"
 }
 ```
-Perfection &#x1f44c;
+
+![OpenApi response](https://reqhubprod.blob.core.windows.net/public/docs/openapi-tutorial-response.png)
+
+Wonderful &#x1f44c;
 
 You can also visit `https://<your base URL>/tutorial/translate?input=whatever_you_want` in your browser, replacing `<your base URL>` with your actual base URL.
 If a browser window doesn't automatically open to the correct URL when you start the API, you can find the possible base URLs within `Properties/launchSettings.json`.
 
-## Get API keys
+## Create a ReqHub API
+
+Now that we have a project up and running, [sign in to ReqHub](https://reqhub.io/login) and create a new API.
+
+![Create API button](https://reqhubprod.blob.core.windows.net/public/docs/new-api.png)
+
+Enter a name for your API, like "Tutorial API" if you don't feel like being silly, or "SUPERBUCKETULTRACATS" if you do.
+All you really need is the name, but feel free to edit any of the other options!
+
+![Creating a new API](https://reqhubprod.blob.core.windows.net/public/docs/create-tutorial-api.png)
+
+Click **Save** and you will see the page for your brand new API!
+[Here's ours](https://reqhub.io/SpaceGiraffe/Tutorial-API) &#x1f60e;
 
 ## Add ReqHub
+
+Back to the code, let's install and configure ReqHub.
+
+Right-click the project and select **Manage NuGet Packages**.
+
+![Manage NuGet packages button](https://reqhubprod.blob.core.windows.net/public/docs/netcore-manage-nuget-packages.png)
+
+Search for ReqHub and install the latest version.
+
+![Installing ReqHub](https://reqhubprod.blob.core.windows.net/public/docs/nuget-install-reqhub.png)
+
+Now there are a couple different paths, depending on how your project is set up.
+
+#### .Net 6.0/C# 10 (Visual Studio 2022)
+If you're using Visual Studio 2022, your Program.cs file is probably using the [top-level statements](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements) feature of C#.
+Edit Program.cs and add the following `using` statement to the top of the file:
+
+```js
+using ReqHub;
+```
+
+Add the following lines somewhere near the other calls to `builder.Services`:
+
+```js
+var publicKey = "<your_public_key>"; // this can be any string for now
+var privateKey = "<your_private_key>"; // this can be any string for now
+builder.Services.AddReqHub(publicKey, privateKey);
+```
+
+Next, add `app.UseReqHub()` after `app.UseHttpsRedirection()`:
+
+```js
+app.UseReqHub();
+```
+
+#### Conventional Startup.cs
+Otherwise, if your project has a Startup.cs file, open that and add the following `using` statement to the top of the file:
+
+```js
+using ReqHub;
+```
+
+Add the following lines inside the `ConfigureServices` method:
+
+```js
+var publicKey = "<your_public_key>"; // this can be any string for now
+var privateKey = "<your_private_key>"; // this can be any string for now
+services.AddReqHub(publicKey, privateKey);
+```
+
+Go down to the `Configure` method and add the following line between `app.UseRouting()` and `app.UseEndpoints()` if present, otherwise somewhere towards the top of the method.
+
+```js
+app.UseReqHub();
+```
+
+## Get API keys
+
+Back to your API page, scroll down to the **Publisher keys** section.
+
+![Publisher keys](https://reqhubprod.blob.core.windows.net/public/docs/publisher-keys.png)
+
+Copy the public key and paste over `<your_public_key>` in the code. Then copy the private key and paste over `<your_private_key>`.
+Your code should look something like the following:
+
+```js
+var publicKey = "r4k4MD6tH82dNtphZ6MO65mcce6n5mc6gaswxEVwcat11AiuyIliQKeDUXIMUfiNoWlq8sGGUkI03rP7A0Q==";
+var privateKey = "8RlZzCbRRexhRu3teza2FRIVWZwPXrb0zn0N6r4=";
+builder.Services.AddReqHub(publicKey, privateKey);
+```
+
+That's it&mdash;your API is ready to go! &#x1f680;
 
 ## Testing with Postman
 
