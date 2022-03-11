@@ -5,6 +5,8 @@
 
 The following steps require a ReqHub account. Make sure you're logged in by [signing in](https://reqhub.io/login) or [signing up](https://reqhub.io/create-account).
 
+We also assume you have downloaded and installed [Postman](https://www.postman.com/downloads/).
+
 ----
 
 ## Use our template!
@@ -61,7 +63,7 @@ Next you'll need to set up variables for your API keys.
 
 Copy the client keys for the API you want to call. You can use our official [public test API](https://reqhub.io/SpaceGiraffe/Public-test-API), and see the [Quickstart guide](http://localhost:3000/#/getting-started/quickstart?id=consuming-an-api) on adding an API to your account.
 
-![Subscribing to an API](https://reqhubprod.blob.core.windows.net/public/docs/client-keys.png)
+![Client keys](https://reqhubprod.blob.core.windows.net/public/docs/client-keys.png)
 
 In Postman, switch to the 'Variables' tab and create a variable called `publicKey` and another called `privateKey`. Then paste the corresponding client keys into the 'INITIAL VALUE' field.
 

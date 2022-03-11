@@ -77,8 +77,11 @@ Execute the request, and you should see a response like the following:
 
 Wonderful &#x1f44c;
 
-You can also visit `https://<your base URL>/tutorial/translate?input=whatever_you_want` in your browser, replacing `<your base URL>` with your actual base URL.
-If a browser window doesn't automatically open to the correct URL when you start the API, you can find the possible base URLs within `Properties/launchSettings.json`.
+You can also visit `https://<your_base_url>/tutorial/translate?input=whatever_you_want` in your browser, replacing `<your_base_url>` with your actual base URL.
+If a browser window automatically opens when you start the API, you can copy the base URL from the address bar.
+Otherwise you can find the possible base URLs within `Properties/launchSettings.json` in Visual Studio.
+
+For example, ours ended up being `localhost:44328`. Our full URL would then be `https://localhost:44328/tutorial/translate`.
 
 ## Create a ReqHub API
 
@@ -169,6 +172,60 @@ builder.Services.AddReqHub(publicKey, privateKey);
 That's it&mdash;your API is ready to go! &#x1f680;
 
 ## Testing with Postman
+
+Now when you run the app, the `/tutorial/translate` endpoint will produce errors like `400 Bad Request. headers_missing`.
+This is because your API now requires a set of client API keys to call it.
+That's good, it's working!
+If you have other errors, you may have to troubleshoot your setup.
+
+[Postman](https://www.postman.com) is a tool for testing APIs.
+You can [download it here](https://www.postman.com/downloads/).
+*(Note: you should be able to skip creating an account if you don't want to, but they're becoming increasingly persistent about that!)*
+
+Once that's set up, [download our Postman collection](https://reqhubprod.blob.core.windows.net/public/tools/postman/ReqHub%20Tutorial.postman_collection.json) for this tutorial.
+
+Import the collection using the import button.
+
+![Import button](https://reqhubprod.blob.core.windows.net/public/docs/postman-import-collection.png)
+
+Then select/drag-and-drop the collection file and select `Import`.
+
+Next, edit the collection and select the **Variables** tab. (Collection menu > Edit > Variables)
+
+![Edit collection variables](https://reqhubprod.blob.core.windows.net/public/docs/postman-tutorial-edit-variables.png)
+
+Copy and paste your client public and private keys into their respective variable slots, for both the initial value and current value.
+
+When you're done, save with Ctrl+S or the save button.
+
+![Client keys](https://reqhubprod.blob.core.windows.net/public/docs/client-keys.png)
+
+Next, expand the collection and select the `/tutorial/translate` request.
+Edit the URL to replace `<your_base_url>` with your actual base URL.
+
+You can find your base URL a couple of ways.
+If a browser window automatically opens when you start the API, you can copy the base URL from the address bar.
+Otherwise you can find the possible base URLs within `Properties/launchSettings.json` in Visual Studio.
+
+For example, ours ended up being `localhost:44328`. Our full URL would then be `https://localhost:44328/tutorial/translate`.
+
+![Client keys](https://reqhubprod.blob.core.windows.net/public/docs/postman-tutorial-endpoint.png)
+
+Make sure your API is running and click **Send**.
+
+You should see a response like the following:
+
+```js
+{
+    "message": "potato cat"
+}
+```
+
+Congratulations &#x1f389;! You are now up and running, and ready to conquer the world &#x1f4aa;
+
+Coming up in this tutorial we cover deploying your API, setting up pricing, and going public.
+Feel free to stop here if you have an itch to get building your API, and come back when you're ready to put it into production.
+Otherwise, let's ship it! &#x1f680;
 
 ## Deployment (optional)
 
