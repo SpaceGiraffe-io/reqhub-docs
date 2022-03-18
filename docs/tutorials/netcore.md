@@ -233,8 +233,76 @@ Right now your API is only available on your local machine, or possibly within y
 In order to make your API accessible to the outside world, it needs to be deployed somewhere on the Internet.
 
 There are many options for hosting, but we will be using [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/overview) for this tutorial.
+It's free and integrates well with .Net Core and Visual Studio.
+
+In Visual Studio, right-click the project and select Publish.
+
+![Visual Studio publish project](https://reqhubprod.blob.core.windows.net/public/docs/netcore-publish-project.png)
+
+You should appear on the publish page with a popup window that shows the ways you can publish your app.
+Select Azure and click **Next**.
+
+*Note: if the popup window doesn't appear, you can click "Add a publish profile" on the publish page.*
+
+![Publish target](https://reqhubprod.blob.core.windows.net/public/docs/publish-target.png)
+
+After that, select Azure App Service (Windows) and click **Next**.
+
+![Publish platform](https://reqhubprod.blob.core.windows.net/public/docs/publish-target-platform.png)
+
+Now you'll need to be signed in to Visual Studio and Azure with your Microsoft account.
+Create or sign into accounts until it lets you proceed to the next step.
+
+![Create account step](https://reqhubprod.blob.core.windows.net/public/docs/publish-create-account.png)
+
+Once your accounts are all set up, you can create an App Service resource to publish to.
+If a window to create a new App Service doesn't appear automatically, click the small green plus to the right of **App Service instances**.
+
+1. Replace the ugly, auto-generated name with a nicer one.
+2. For the resource group, click **New** and provide a name that makes sense, like "tutorials", or "tutorial resource group" or something. A resource group is kind of like a folder for services in Azure.
+3. For the hosting plan, click **New** and fill out the form as shown below. Use any name you want, and try to select a region that makes sense for you (for the purposes of this tutorial it's not important). Be sure to select **Free** for the size!
+
+![Hosting plan setup](https://reqhubprod.blob.core.windows.net/public/docs/publish-hosting-plan.png)
+
+When everything looks good, click **Create**.
+
+![Completed app service form](https://reqhubprod.blob.core.windows.net/public/docs/publish-new-appservice.png)
+
+Now that the app service is created, expand your resource group and select it under **App Service instances**, then click **Next**.
+
+![Select the app service](https://reqhubprod.blob.core.windows.net/public/docs/publish-resource-created.png)
+
+If it asks you about API Management, click **Skip this step** and **Finish**.
+
+![Skipping API management](https://reqhubprod.blob.core.windows.net/public/docs/publish-skip-api-management.png)
+
+If it asks you how you'd like to deploy, stick with the Publish option and click **Finish**.
+
+![Deploy method](https://reqhubprod.blob.core.windows.net/public/docs/publish-method.png)
+
+Finally, hit **Publish**.
+
+![Final deployment](https://reqhubprod.blob.core.windows.net/public/docs/publish-deploy.png)
+
+After a few seconds your browser will open the published project URL.
+You should see the `400 Bad Request. headers_missing` error message.
+It's a little confusing to be glad to see an error message, but congratulations&mdash;your API is deployed! &#x1f389;
+
+*Note: we know that seemed like a long and complicated process, but it's easy once you're used to it. For subsequent deployments you can just click Publish like in the final step, but we encourage you to create a new publish profile and click through it on your own. If you mess something up, you can always log into Azure and delete it!*
+
+Now let's test it with Postman &#x1f4aa;
 
 #### Testing the deployment
+
+Open up Postman and find the request you created earlier.
+We're just going to replace the localhost base URL with the published URL, and send it.
+
+*Note: you can either duplicate the request and modify the URL so you have requests for both the local and the published instances, or you can keep working with the current request&mdash;totally up to you!*
+
+For example, in our case we'll be replacing `localhost:44328` with `reqhub-netcore-tutorial-api.azurewebsites.net`.
+After hitting **Send**, you should get a successful response.
+
+![Published API response](https://reqhubprod.blob.core.windows.net/public/docs/postman-published-api.png)
 
 ## Set up pricing (optional)
 
