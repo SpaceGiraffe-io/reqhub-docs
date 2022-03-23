@@ -1,5 +1,5 @@
 
-# .Net Core tutorial
+# .Net Framework tutorial
 
 #### Prerequisites
 
