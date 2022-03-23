@@ -17,8 +17,8 @@ In this tutorial we will walk through creating an API project, configuring ReqHu
 We'll also cover deploying the API to Azure, setting up pricing on ReqHub, and taking it public.
 
 The goal of this tutorial is to show you the steps involved in distributing your API on ReqHub, starting from scratch.
-We won't be concerned about the actual content of the API, so we'll be building a ridiculous web service that replaces certain words from an input string.
-Then when you're done, you can either use this project as an example, or as a starting point for your real project!
+We won't be concerned about the actual content of the API, so we'll be building a ridiculous web service that replaces words from an input string.
+When you're done, you can either use this project as an example, or as a starting point for your real project!
 
 Let's get started! &#x1f680;
 
@@ -306,15 +306,56 @@ After hitting **Send**, you should get a successful response.
 
 ## Set up pricing (optional)
 
-#### Recurring pricing
+With your API deployed and ready to go, let's add pricing.
 
-#### Usage pricing
+To make money selling your APIs, you will need to set up a Stripe account.
+If you haven't set up Stripe yet, you should see a button on your dashboard, on the page for an API, or you can find it in the [account section](https://dev.reqhub.io/account).
+
+![Set up Stripe button](https://reqhubprod.blob.core.windows.net/public/docs/set-up-stripe.png)
+
+Follow the screens to complete Stripe's onboarding process.
+
+*Note: Stripe may ask for sensitive information, but that information stays with Stripe and is not visible to ReqHub or SpaceGiraffe, LLC. We don't want it anyway &#x2764;*
+
+Once that's completed, you can set up pricing!
+
+#### Creating a pricing plan
+
+On your API pages, you should now see a button to add pricing plans under the &#x1F4B3; **Plans & pricing** section.
+
+![Add a pricing plan](https://reqhubprod.blob.core.windows.net/public/docs/add-pricing-plan.png)
+
+Fill out the form with the pricing details you want.
+
+We've made ours so it costs just under one million dollars per month &#x1f4aa;
+
+![Creating a pricing plan](https://reqhubprod.blob.core.windows.net/public/docs/tutorial-create-plan.png)
+
+Since this isn't exactly a useful API, the absurdly high cost will hopefully discourage most people from trying to buy it, even though we're pretty sure the transaction would be declined anyway.
+
+Cool. Now hit **Save** at the bottom of the page and check out your new pricing plan!
+
+![Pricing plan](https://reqhubprod.blob.core.windows.net/public/docs/tutorial-pricing-plan.png)
+
+#### Recurring and usage pricing
+
+You probably noticed some of the different pricing options while you were creating your plan.
+These allow you to control billing frequency (monthly, quarterly, annually, etc.), amount billed, and per-request price for usage.
+You can learn more about this with our recipes for [setting up monthly pricing](/recipes/monthly-pricing) and [setting up usage pricing](/recipes/usage-pricing).
 
 ## Go public (optional)
 
+Now we're ready to make our API appear in the ReqHub API marketplace&mdash;let's ship it! &#x1f680;
+
+Edit your API and make sure the **Private** checkbox is un-checked. Hit **Save** and you're done!
+
+![Publishing to the marketplace](https://reqhubprod.blob.core.windows.net/public/docs/tutorial-public-api.png)
+
 #### That's it!
 
-Congratulations, you have created an API with ReqHub &#x1f389;
+Congratulations, you have created an API from scratch and shipped it with ReqHub &#x1f680;
+
+Now go build something awesome! &#x1f4aa;
 
 
 ## Next steps

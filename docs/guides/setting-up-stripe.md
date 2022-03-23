@@ -18,7 +18,7 @@ Follow the screens to complete Stripe's onboarding process.
 
 **Note:** Stripe may ask for sensitive information, but that information stays with Stripe and is not visible to ReqHub or SpaceGiraffe, LLC. We don't want it anyway &#x2764;
 
-Once that's completed, you can set up pricing.
+Once that's completed, you can set up pricing!
 
 ## Adding pricing plans
 
