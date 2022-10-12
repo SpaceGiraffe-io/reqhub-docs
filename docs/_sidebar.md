@@ -6,13 +6,14 @@
 - Tutorials
 
   - [.Net Core](tutorials/netcore.md)
-  - [.Net Framework](tutorials/netframework.md)
-  - [NodeJs](tutorials/nodejs.md)
-  - [Python](tutorials/python.md)
-  - [Ruby](tutorials/ruby.md)
-  - [Java](tutorials/java.md)
-  - [PHP](tutorials/php.md)
-  - [Go](tutorials/go.md)
+  - [Others](tutorials/other-languages.md)
+  <!--[.Net Framework](tutorials/netframework.md)-->
+  <!--[NodeJs](tutorials/nodejs.md)-->
+  <!--[Python](tutorials/python.md)-->
+  <!--[Ruby](tutorials/ruby.md)-->
+  <!--[Java](tutorials/java.md)-->
+  <!--[PHP](tutorials/php.md)-->
+  <!--[Go](tutorials/go.md)-->
 
 - Recipes
 
@@ -35,9 +36,9 @@
   - [Writing your own middleware](guides/writing-your-own-middleware.md)
   <!--[Creating a client library](guides/client-library.md) - commenting these out until there's a better way than "write your library in all the languages" - a Yeoman generator and auto-publisher or something -->
   <!--[Microservices](guides/microservices.md)-->
-  <!--- [Marketing your API](guides/marketing-your-api.md)-->
+  <!--[Marketing your API](guides/marketing-your-api.md)-->
   - [Subscriptions in depth](guides/subscriptions-in-depth.md)
-  <!--- [Making user-friendly pages](guides/user-friendly-pages.md)-->
-  <!--- [Roadmap](guides/roadmap.md)-->
+  <!--[Making user-friendly pages](guides/user-friendly-pages.md)-->
+  <!--[Roadmap](guides/roadmap.md)-->
   - [Troubleshooting](guides/troubleshooting.md)
 
